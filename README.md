@@ -12,6 +12,7 @@ I love birding, computers, data hoarding and collecting (same same). I made this
 - Script to automate the metadata creation for batches of photos.
 - Script to generate thumbnails for batches of photos.
 - Can be hosted online or used offline.
+- Works on desktop and on mobile.
 
 ## User Interface
 __Consists of two main sections:__<br>
@@ -23,6 +24,7 @@ A gallery that displays photos on a single page in columns of three. Can show po
 git clone https://github.com/ZdogMcSuperfly/PurpleHen.git
 ```
 ## Usage
+Sorting by country works by appending ISO 3166-1 alpha-3 codes to the end of the "location" tag.
 
 ## Customizing Ideas
 On my copy I have the "Favorites" button renamed to "Lifelist" and I use it too display one photo per species like what a lifelist is.
