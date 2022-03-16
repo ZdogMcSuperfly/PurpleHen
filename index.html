@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script type="text/javascript" src="image_data.js"></script>
+    <link rel="icon" href="favicon.svg">
+    <style>
+    body{color: #FFFFFF; background-color: #000000; font-family: sans-serif;}
+    hr{border: 3px solid #8A2BE2; width:100%;}
+    img{height: 100%;}
+    a{color: #FFFFFF;}
+    .menu{position: fixed; top: 0; width: 100%; font-size: 125%; text-align: center; background-color: #000000;}
+    .hover:hover{background-color: #888888;}
+    .logomark{position: fixed; top: 1%; right: 0; font-size: 500%;}
+    .left{position: fixed; top: 0; left: 0;}
+    .img{float: left; width: 30%; height: 30%; padding: 0.25%;}
+    .nonimg{float: left; width: 30%; height: 30%; padding: 0.25%;}
+    #viewer{position: absolute; top: 15%; left: 5%}
+    </style>
+    <title>PurpleHen</title>
+</head>
+<body>
+    <div id="viewer"></div> <!-- #FFD300 -->
+    <div style="position: relative;">
+    <hr>
+    </div>
+    <div class="menu">
+        <b>PurpleHen</b><br>
+        •<span class="hover" id="newbut" onmouseover="menudescriptions(4)" onmouseout="inforeset()" onclick="drawimages('new')"> New </span>
+        •<span class="hover" id="favouritebut" onmouseover="menudescriptions(0)" onmouseout="inforeset()" onclick="drawimages('favourite')"> Favourites </span>
+        •<span class="hover" id="wildbut" onmouseover="menudescriptions(1)" onmouseout="inforeset()" onclick="drawimages('wild')"> Wild </span>
+        •<span class="hover" id="captivebut" onmouseover="menudescriptions(2)" onmouseout="inforeset()" onclick="drawimages('captive')"> Captive </span>
+        •<span class="hover" onmouseover="menudescriptions(5)"> by Country </span>
+        •<span class="hover" id="allbut" onmouseover="menudescriptions(3)" onmouseout="inforeset()" onclick="drawimages('')"> All </span>•
+
+        <br><span id="info">Welcome!<br>&nbsp</span>
+        <hr>
+    </div>
+    <div class="left">
+    Click for higher quility!<br>
+    <a href="https://github.com/ZdogMcSuperfly/PurpleHen">Git repo.</a><br>
+    <span id="photocount">0 photos.</span><br>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    </div>
+    <div class="logomark">🐦</div> <!--set it as a bird emoji so each visitor sees a different glyph due to there fonts, its unicode birding : )-->
+
+    <script>
+        //DESTROY DIVS ALIVE (thanks stack overflow)
+        function removeElementsByClass(className){
+            const elements = document.getElementsByClassName(className);
+            while(elements.length > 0){
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        }
+
+        drawimages("")
+        //load images metadata and then draw images onscreen (thumbnails soon)
+        function drawimages(mode) {
+            //reset viewer
+            removeElementsByClass('img')
+            removeElementsByClass('noimg')
+            document.getElementById('photocount').innerHTML="0 photos.";
+
+            //go through image_data.js
+            for (var i = 0; i < imagedata.length; i++) {
+                //decide what data to pick from image_data.js (idk the true and false seem flipped too me i dont quite get it)
+                if (mode == "wild" && imagedata[i].wild == "false"){continue;} //only draws wild birds
+                if (mode == "captive" && imagedata[i].wild == "true"){continue;} //only draws captive birds
+                if (mode == "favourite" && imagedata[i].favourite == "false"){continue;} //only draws images marked with favourite == true, markings photos as favourite is the way for the user to showcase there most favorite of favorite photos
+                if (mode == "new" && imagedata[i].new == "false"){continue;} //shows only recently added photos
+                if (mode.charAt(0) == "c" && imagedata[i].location.substr(imagedata[i].location.length - 3) !== mode.substr(mode.length - 3)){continue;} //draws pictures based on a pictures ISO 3166-1 alpha-3 code
+
+                //draw elements to the screen
+                var div = document.createElement("div");
+
+                if (imagedata[i].src == "hr"){
+                    div.className = "nonimg"
+                    div.innerHTML = "<hr>";
+                } else if (imagedata[i].src == "blank"){
+                    div.className = "nonimg"
+                    div.innerHTML = "<img style='width: 100%;' src='blank.png'>";
+                } else {
+                    div.className = "img"
+                    div.innerHTML = "<a href='./images/"+imagedata[i].src+"' target='_blank' rel='noopener noreferrer'><img style='width: 100%;' onmouseover='imageinfo("+i+")' onmouseout='inforeset()' src='./images/thumbs/"+imagedata[i].src+"'></a>";
+                }
+                document.getElementById('viewer').appendChild(div);
+                document.getElementById('photocount').innerHTML=document.querySelectorAll('#viewer .img').length+" photos."; //update the photo counter with how many photos it drew to the screen
+            }
+            if (mode != ""){removeElementsByClass('nonimg');} //only draw hr/blanks when viewing all photos
+        }
+
+        //display infomation extracted from image_data.js
+        function imageinfo(x) {
+            document.getElementById("info").innerHTML = imagedata[x].morph+" "+imagedata[x].name+"<br>"+imagedata[x].date+" 📷: "+imagedata[x].camera+" 🌎: "+imagedata[x].location
+        }
+
+        //reset description when images is no longer hovered over
+        function inforeset() {
+            document.getElementById("info").innerHTML = "&nbsp<br>&nbsp"
+        }
+
+        //display infomation on what each menu button does
+        function menudescriptions(y) {
+            switch(y) {
+                case 0:
+                    document.getElementById("info").innerHTML = "Shows favourite photos.<br>&nbsp"
+                    break;
+                case 1:
+                    document.getElementById("info").innerHTML = "Shows only wild birds.<br>&nbsp"
+                    break;
+                case 2:
+                    document.getElementById("info").innerHTML = "Shows only captive birds.<br>&nbsp"
+                    break;
+                case 3:
+                    document.getElementById("info").innerHTML = "Shows all photos.<br>&nbsp"
+                    break;
+                case 4:
+                    document.getElementById("info").innerHTML = "Shows new and recently added photos.<br>&nbsp"
+                    break;
+                case 5:
+                    document.getElementById("info").innerHTML = "•<span class='hover' onclick=\"drawimages('cAUS')\"> 🇦🇺 </span>•<span class='hover' onclick=\"drawimages('cSGP')\"> 🇸🇬 </span>•<br>&nbsp"
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!--{"src": ".jpg", "name": "", "morph": "", "location": "Victoria, AUS", "camera": "Nikon Coolpix P900", "date": "??/??/??", "favourite": "true", "wild": "true"},-->
