@@ -2,7 +2,7 @@
 ## Photo gallery and photo tagging for birders.
 
 <p align="center"><br>
-<img src="https://www.zoes.photos/favicon.svg"></p>
+<img src="https://github.com/ZdogMcSuperfly/PurpleHen/blob/main/favicon.svg"></p>
 
 I love birding, computers, data hoarding and collecting (same same). I made this software to nice and neatly display my photos in a way for me to enjoy and also to host it online to make sharing photos with friends and family easy too. I'm sure others could get some use out of this and improve apon it but I'm mainly hosting it on GitHub because Git is cool. 😎
 ## Features
