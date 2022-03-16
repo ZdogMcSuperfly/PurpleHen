@@ -51,8 +51,12 @@ This is where metadata for photos are stored, each photo has its own line and is
 | wild  | Set to "true" for wild birds "false" for captive ones.|
 | new  | When adding a new batch of photos, set to "True" for sort by new to work.|
 
+There are two special values that be can be used to alter gallery rendering. Setting "src" tags value to "hr" will create a horizontal rule across the page or use the value "blank" to create a blank spot in the gallery. (see __Know Issues__ for additional infomation.)
+
 __generate.py__<br>
 This python script (wip) will assist in creating metadata and must be ran from the root directory.<br>Open the file in a text editor to edit the template (line 14) filling in the "name","morph","location","camera","favourite","wild" and "new" tags.<br>Note that the template will be applied to all photos so normally "name", "morph", "location" will be set to blank,<br>"camera" to whatever camera was used and "favourite", "wild" and "new" set to boolean values. ("false", "true", "true" respectivly.)<br>The last two tags "src" takes the filename and "date" takes the date from the EXIF data from the file all automatically.
+
+When the script is ran itll output data to be copied from terminal to "image_data.js". At the moment this part is not automatic.
 
 ## Customizing Ideas
 On my copy I have the "Favorites" button renamed to "Lifelist" and I use it too display one photo per species like what a lifelist is.
