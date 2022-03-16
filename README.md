@@ -1,5 +1,5 @@
 # 'PurpleHen' <sub>v2</sub>
-## Photo gallery and photo tagging for birders.
+## Photo gallery and photo tagging for birders and nerders.
 
 <p align="center"><br>
 <img src="https://github.com/ZdogMcSuperfly/PurpleHen/blob/main/favicon.svg"></p>
