@@ -16,7 +16,7 @@ I love birding, computers, data hoarding and collecting (same same). I made this
 
 ## User Interface
 __Consists of two main sections:__<br>
-A header that stays at the top of the page regardless of scrolling with infomation on the left (instructions to the user, current ammount of photos, and photo liceance), buttons in the middle for sorting photos (new photos, favorite photos, wild photos, captive photos, photos by country, and all photos), a heading and space for displaying descripts, and finally on the right a space for a logo or signature.
+A header that stays at the top of the page regardless of scrolling with infomation on the left (instructions to the user, current ammount of photos, and photo liceance), buttons in the middle for sorting photos (new photos, favorite photos, wild photos, captive photos, photos by country, and all photos), a heading and space for displaying descripts, and finally on the right a space for a logo or signature.<br><br>
 A gallery that displays photos on a single page in columns of three. Can show portrait and landscape photos next to each other and when hovering displays metadata of the photo below the buttons in the header. Horizontal rules and blank spaces can be inserted to seperate and organize photos.
 
 ## Installation
