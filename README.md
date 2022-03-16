@@ -1,8 +1,8 @@
 # 'PurpleHen' <sub>v2</sub>
 ## Photo gallery and photo tagging for birders.
 
-No idea what to name this, any ideas are appreciated.
-![Logo](https://www.zoes.photos/favicon.svg)
+<p align="center"><br>
+<img src="https://www.zoes.photos/favicon.svg"></p>
 
 I love birding, computers, data hoarding and collecting (same same). I made this software to nice and neatly display my photos in a way for me to enjoy and also to host it online to make sharing photos with friends and family easy too. I'm sure others could get some use out of this and improve apon it but I'm mainly hosting it on GitHub because Git is cool. 😎
 ## Features
@@ -34,6 +34,7 @@ For my logo I have the bird emoji (1F426, 🐦) so each device I visit my copy o
 - Automation scripts are not fully automatic and are not explicitly user friendly.
 - Blanks spaces work with using a tiny compleatly transparent image; this is jank and a better solution will improve this.
 - Another jank is that horizontal rules take up 3 lines in image_data.js and must start in the leftmost column or else wont render properly.
+- I cant think of a better name than PurpleHen, any ideas are appreciated.
 
 ## License
 GNU 3.0
