@@ -23,7 +23,6 @@ A gallery that displays photos on a single page in columns of three. Can show po
 ## Installation
 Dependencies: Python Pillow
 ```sh
-pip install PIL
 git clone https://github.com/ZdogMcSuperfly/PurpleHen.git
 ```
 ## Usage
