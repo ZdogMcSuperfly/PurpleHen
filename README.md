@@ -25,9 +25,6 @@ Dependencies: Python Pillow
 ```sh
 pip install PIL
 git clone https://github.com/ZdogMcSuperfly/PurpleHen.git
-cd PurpleHen
-rm ./images/deleteme
-rm ./images/thumbs/deleteme
 ```
 ## Usage
 __"images" folder__<br>
