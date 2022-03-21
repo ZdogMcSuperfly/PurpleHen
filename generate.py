@@ -8,9 +8,10 @@ for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     # checking if it is a file
     if os.path.isfile(f):
+        print("// " + f)
         image = Image.open(f)
         image.thumbnail((640,480))
-        image.save(ddirectory+"/thumbs/"+f[38:])
-        print('{"src": "'+f[38:]+'", "name": "", "morph": "", "location": "", "camera": "", "date": "'+Image.open(f)._getexif()[36867]+'", "favourite": "false", "wild": "true", "new": "true"},')
-
-# Image.open(f)._getexif()[36867]
+        image.save(directory+"/thumbs/"+filename)
+        exif = Image.open(f)._getexif()
+        exif_date = "Unknown date" if 36867 not in exif else exif[36867]
+        print('{"src": "'+filename+'", "name": "", "morph": "", "location": "", "camera": "", "date": "'+ exif_date + '", "favourite": "false", "wild": "true", "new": "true"},')
