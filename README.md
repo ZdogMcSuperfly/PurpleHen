@@ -67,6 +67,7 @@ This doesn't have to be used just for bird photos either could be bird drawings 
 - I cant think of a better name than PurpleHen, any ideas are appreciated.
 - Only one photo resolution has really been tested (that being 4:3 and 3:4)
 - Thumbnail script generates landscape thumbnails for portrait photos.
+- Only been tested to work on Linux.
 
 ## License
 GNU 3.0
