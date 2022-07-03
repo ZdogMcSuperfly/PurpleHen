@@ -185,7 +185,7 @@ while True:
             f.write("imagedata = [\n")
             for x in range(len(image_page)):
                 for y in image_page[x]:
-                    f.write(str(y)+"\n")
+                    f.write(str(y)+",\n")
             f.write("];")
             f.close()
             status = "Successfully saved to new_image_data.py"
