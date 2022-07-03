@@ -41,6 +41,12 @@ git clone https://github.com/ZdogMcSuperfly/PurpleHen.git
 __`images` folder__<br>
 Found in the root directory this is where all photos will be stored. Contains one subfolder `thumbs` which contains the thumbnails used in rendering; thumbnail filenames must be the same as the ones in `images`.
 
+__`PurpleHen_image_viewer.py`__<br>
+After operning `PurpleHen.py` in your terminal open another terminal and run this file to get a visual of what photo is currently highlighted.
+
+__`new_image_data.py`__<br>
+Once you save your data it will NOT overwrite your previous copy of data. Make sure after closing `PurpleHen.py` to merge these files so next time you open the data editor you will be updating the most recent version of the data.
+
 __`image_data.py`__<br>
 This is where metadata for photos are stored, each photo has its own line and is rendered from first line to last, knowing this can be used to organize photos. Each line contains 9 different tags that can be filled out to give photos extra information.
 <br>
@@ -60,9 +66,6 @@ This is where metadata for photos are stored, each photo has its own line and is
 | wild  | Set to "true" for wild birds "false" for captive ones.|
 
 There are two special values that be can be used to alter gallery rendering. Setting `source` tags value to "hr" will create a horizontal rule across the page or use the value "blank" to create a blank spot in the gallery. (see __Know Issues__ for additional infomation.)
-
-__`PurpleHen_image_viewer.py`__<br>
-After operning `PurpleHen.py` in your terminal open another terminal and run this file to get a visual of what photo is currently highlighted.
 
 ## Customizing Ideas
 On my copy I have the "Favorites" button renamed to "Lifelist" and I use it too display one photo per species like what a lifelist is.
