@@ -39,7 +39,7 @@ git clone https://github.com/ZdogMcSuperfly/PurpleHen.git
 ```
 ## Usage
 __`images` folder__<br>
-Found in the root directory this is where all photos will be stored. Contains one subfolder `thumbs` which contains the thumbnails used in rendering; thumbnail filenames must be the same as the ones in `images`.
+Found in the root directory this is where all photos will be stored. Make sure to delete files called `deleteme` too. Contains one subfolder `thumbs` which contains the thumbnails used in rendering; thumbnail filenames must be the same as the ones in `images`.
 
 __`PurpleHen_image_viewer.py`__<br>
 After operning `PurpleHen.py` in your terminal open another terminal and run this file to get a visual of what photo is currently highlighted.
