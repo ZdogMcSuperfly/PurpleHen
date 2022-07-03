@@ -61,7 +61,7 @@ for x in files_without_entrys:
     except TypeError:
         exif_date = ""
     #add entry
-    image_set.append({"source": x, "morph": "", "bird": "", "location": default_location, "date": exif_date, "camera": default_camera, "favourite": " F ", "new": " F ", "wild": " T "})
+    image_set.append({"source": x, "morph": "", "bird": "", "location": default_location, "date": exif_date, "camera": default_camera, "favourite": " F ", "new": " T ", "wild": " T "})
 
 #split the image_data into pages of nth values each with nth being the rest of screen space from the terminal
 image_page = [image_set[x:x+(height-4)] for x in range(0, len(image_set),(height-4))] 
