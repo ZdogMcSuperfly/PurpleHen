@@ -32,6 +32,8 @@ A header that stays at the top of the page regardless of scrolling with infomati
 
 A gallery that displays photos on a single page in columns of three. Can show portrait and landscape photos next to each other and when hovering displays metadata of the photo below the buttons in the header. Horizontal rules and blank spaces can be inserted to seperate and organize photos.
 
+This file requires a terminal emulator to run. If you open up the file in a text editor you can find some default values to edit so when new photos are added they inhernt those values saving the user from entering em over and over.
+
 ## Installation
 Dependencies: NCurses, Pillow, Tkinter
 ```sh
