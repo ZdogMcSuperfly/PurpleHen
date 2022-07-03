@@ -3,7 +3,7 @@ from PIL import ImageTk, Image #tkinter cant read .jpg out of the box?
 import image_data
 
 #varibles
-image_to_draw = "./images/thumbs/"+image_data.imagedata[0]["source"]
+image_to_draw = "./blank.png"
 
 #setup tkinter
 root = Tk()
